@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网页总结助手</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>网页内容总结助手</h1>
+      <p class="subtitle">使用 AI 智能分析网页内容</p>
+    </header>
+    
+    <div class="quick-actions">
+      <button id="summarizeBtn" class="action-btn primary">
+        <span class="icon">📝</span>
+        <span class="text">智能总结</span>
+      </button>
+      <button id="translateBtn" class="action-btn secondary">
+        <span class="icon">🌐</span>
+        <span class="text">翻译成中文</span>
+      </button>
+    </div>
+    
+    <div class="advanced-actions">
+      <button id="extractBtn" class="action-btn tertiary">
+        <span class="icon">🎯</span>
+        <span class="text">提取要点</span>
+      </button>
+      <button id="highlightBtn" class="action-btn tertiary">
+        <span class="icon">✨</span>
+        <span class="text">高亮关键信息</span>
+      </button>
+      <button id="sidebarBtn" class="action-btn tertiary">
+        <span class="icon">📋</span>
+        <span class="text">打开侧边栏</span>
+      </button>
+    </div>
+    
+    <div class="settings-toggle" id="settingsToggle">
+      <span>⚙️ API 设置</span>
+      <span class="arrow">▶</span>
+    </div>
+    
+    <div class="settings-panel" id="settingsPanel">
+      <div class="setting-item">
+        <label for="apiKey">OpenAI API Key</label>
+        <input type="password" id="apiKey" placeholder="sk-..." autocomplete="off">
+      </div>
+      
+      <div class="setting-item">
+        <label for="modelSelect">选择模型</label>
+        <select id="modelSelect">
+          <option value="gpt-4">GPT-4 (推荐)</option>
+          <option value="gpt-4-turbo-preview">GPT-4 Turbo</option>
+          <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+        </select>
+      </div>
+      
+      <div class="setting-item">
+        <label for="summaryLength">总结长度</label>
+        <select id="summaryLength">
+          <option value="short">简短 (100字)</option>
+          <option value="medium" selected>中等 (300字)</option>
+          <option value="long">详细 (500字)</option>
+        </select>
+      </div>
+      
+      <div class="setting-item">
+        <label for="languageSelect">目标语言</label>
+        <select id="languageSelect">
+          <option value="Chinese" selected>中文</option>
+          <option value="English">English</option>
+          <option value="Japanese">日本語</option>
+          <option value="Korean">한국어</option>
+        </select>
+      </div>
+      
+      <button id="saveSettings" class="save-btn">保存设置</button>
+    </div>
+    
+    <div id="resultPanel" class="result-panel hidden">
+      <div class="result-header">
+        <span id="resultTitle">总结结果</span>
+        <div class="result-actions">
+          <button id="copyBtn" class="icon-btn" title="复制">📋</button>
+          <button id="exportMdBtn" class="icon-btn" title="导出Markdown">📄</button>
+          <button id="closeResult" class="icon-btn" title="关闭">✕</button>
+        </div>
+      </div>
+      <div id="resultContent" class="result-content"></div>
+    </div>
+    
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <span id="loadingText">处理中...</span>
+    </div>
+    
+    <footer>
+      <p>Powered by OpenAI</p>
+    </footer>
+  </div>
+  
+  <script src="utils/openai.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

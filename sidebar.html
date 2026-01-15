@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网页总结 - 侧边栏</title>
+  <link rel="stylesheet" href="styles/sidebar.css">
+</head>
+<body>
+  <div class="sidebar-container">
+    <header class="sidebar-header">
+      <h1>网页内容分析</h1>
+      <button id="closeSidebar" class="close-btn">✕</button>
+    </header>
+    
+    <div class="url-display" id="urlDisplay">
+      <span class="url-label">当前页面</span>
+      <span class="url-text" id="currentUrl">-</span>
+    </div>
+    
+    <nav class="action-tabs">
+      <button class="tab-btn active" data-tab="summary">总结</button>
+      <button class="tab-btn" data-tab="translate">翻译</button>
+      <button class="tab-btn" data-tab="extract">要点</button>
+      <button class="tab-btn" data-tab="highlights">高亮</button>
+    </nav>
+    
+    <main class="content-area">
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">📄</div>
+        <p>打开任意网页，点击下方按钮开始分析</p>
+      </div>
+      
+      <div id="summaryTab" class="tab-content active">
+        <div class="tab-header">
+          <h2>智能总结</h2>
+          <div class="tab-actions">
+            <button class="icon-btn copy-btn" title="复制">📋</button>
+            <button class="icon-btn export-btn" title="导出">📤</button>
+          </div>
+        </div>
+        <div class="tab-body" id="summaryContent">
+          <p class="placeholder">点击按钮获取总结</p>
+        </div>
+        <button class="generate-btn" id="generateSummary">生成总结</button>
+      </div>
+      
+      <div id="translateTab" class="tab-content">
+        <div class="tab-header">
+          <h2>翻译结果</h2>
+          <select id="translateLang" class="lang-select">
+            <option value="Chinese">中文</option>
+            <option value="English">English</option>
+            <option value="Japanese">日本語</option>
+            <option value="Korean">한국어</option>
+          </select>
+        </div>
+        <div class="tab-body" id="translateContent">
+          <p class="placeholder">点击按钮获取翻译</p>
+        </div>
+        <button class="generate-btn" id="generateTranslate">翻译页面</button>
+      </div>
+      
+      <div id="extractTab" class="tab-content">
+        <div class="tab-header">
+          <h2>核心要点</h2>
+          <div class="tab-actions">
+            <button class="icon-btn copy-btn" title="复制">📋</button>
+          </div>
+        </div>
+        <div class="tab-body" id="extractContent">
+          <p class="placeholder">点击按钮提取要点</p>
+        </div>
+        <button class="generate-btn" id="generateExtract">提取要点</button>
+      </div>
+      
+      <div id="highlightsTab" class="tab-content">
+        <div class="tab-header">
+          <h2>关键信息</h2>
+          <div class="tab-actions">
+            <button class="icon-btn clear-btn" title="清除高亮">🧹</button>
+          </div>
+        </div>
+        <div class="tab-body" id="highlightContent">
+          <p class="placeholder">点击按钮高亮关键信息</p>
+        </div>
+        <button class="generate-btn" id="generateHighlights">高亮关键信息</button>
+      </div>
+    </main>
+    
+    <footer class="sidebar-footer">
+      <div class="status-indicator" id="statusIndicator">
+        <span class="status-dot"></span>
+        <span class="status-text">准备就绪</span>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="utils/openai.js"></script>
+  <script src="sidebar.js"></script>
+</body>
+</html>

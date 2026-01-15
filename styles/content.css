@@ -1,0 +1,36 @@
+/* 内容脚本样式 - 注入到网页中 */
+
+.ai-highlight {
+  background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+  padding: 2px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ai-highlight:hover {
+  background: linear-gradient(120deg, #fed6e3 0%, #a8edea 100%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 高亮计数器 */
+.ai-highlight-counter {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 2147483647;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.ai-highlight-counter:hover {
+  transform: scale(1.05);
+}

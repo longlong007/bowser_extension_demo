@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>设置 - 网页总结助手</title>
+  <link rel="stylesheet" href="styles/options.css">
+</head>
+<body>
+  <div class="settings-container">
+    <header class="settings-header">
+      <h1>⚙️ 设置</h1>
+      <p>网页内容总结助手配置</p>
+    </header>
+    
+    <main class="settings-content">
+      <section class="settings-section">
+        <h2>🔑 API 配置</h2>
+        
+        <div class="form-group">
+          <label for="apiKey">OpenAI API Key</label>
+          <input type="password" id="apiKey" placeholder="sk-..." autocomplete="off">
+          <p class="help-text">你的 API Key 将安全存储在浏览器本地</p>
+        </div>
+        
+        <div class="form-group">
+          <label for="modelSelect">AI 模型</label>
+          <select id="modelSelect">
+            <option value="gpt-4">GPT-4 (推荐 - 最强理解能力)</option>
+            <option value="gpt-4-turbo-preview">GPT-4 Turbo (更快)</option>
+            <option value="gpt-3.5-turbo">GPT-3.5 Turbo (性价比)</option>
+          </select>
+        </div>
+      </section>
+      
+      <section class="settings-section">
+        <h2>📝 总结设置</h2>
+        
+        <div class="form-group">
+          <label for="defaultLength">默认总结长度</label>
+          <select id="defaultLength">
+            <option value="short">简短 (约100字)</option>
+            <option value="medium" selected>中等 (约300字)</option>
+            <option value="long">详细 (约500字)</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="defaultLanguage">默认翻译语言</label>
+          <select id="defaultLanguage">
+            <option value="Chinese" selected>中文</option>
+            <option value="English">English</option>
+            <option value="Japanese">日本語</option>
+            <option value="Korean">한국어</option>
+          </select>
+        </div>
+      </section>
+      
+      <section class="settings-section">
+        <h2>🎨 外观设置</h2>
+        
+        <div class="form-group">
+          <label>主题颜色</label>
+          <div class="theme-options">
+            <button class="theme-btn active" data-theme="purple" style="background: linear-gradient(135deg, #667eea, #764ba2)">
+              紫色
+            </button>
+            <button class="theme-btn" data-theme="blue" style="background: linear-gradient(135deg, #2196F3, #1976D2)">
+              蓝色
+            </button>
+            <button class="theme-btn" data-theme="green" style="background: linear-gradient(135deg, #4CAF45, #388E3C)">
+              绿色
+            </button>
+            <button class="theme-btn" data-theme="orange" style="background: linear-gradient(135deg, #FF9800, #F57C00)">
+              橙色
+            </button>
+          </div>
+        </div>
+      </section>
+      
+      <section class="settings-section">
+        <h2>📋 快捷键</h2>
+        
+        <div class="form-group">
+          <label>打开侧边栏</label>
+          <div class="shortcut-display">
+            <kbd>Alt</kbd> + <kbd>S</kbd>
+          </div>
+        </div>
+      </section>
+      
+      <button id="saveBtn" class="save-btn large">保存所有设置</button>
+      
+      <div id="statusMessage" class="status-message hidden"></div>
+    </main>
+    
+    <footer class="settings-footer">
+      <p>网页内容总结助手 v1.0.0</p>
+      <p>Powered by OpenAI</p>
+    </footer>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
