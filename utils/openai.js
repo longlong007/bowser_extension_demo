@@ -1,11 +1,11 @@
-// OpenAI API 客户端工具类
+// 智谱 Zhipu AI API 客户端工具类
 // 用于 Popup 和 Sidebar 中的 API 调用
 
-class OpenAIClient {
+class ZhipuClient {
   constructor(apiKey = null) {
     this.apiKey = apiKey;
-    this.baseUrl = 'https://api.openai.com/v1';
-    this.model = 'gpt-4';
+    this.baseUrl = 'https://open.bigmodel.cn/api/paas/v4';
+    this.model = 'glm-4-flash';
   }
   
   setApiKey(key) {
@@ -113,5 +113,6 @@ ${text}
   }
 }
 
-// 导出
-window.OpenAIClient = OpenAIClient;
+// 导出（同时保留 OpenAI 别名以保持兼容性）
+window.ZhipuClient = ZhipuClient;
+window.OpenAIClient = ZhipuClient;

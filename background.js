@@ -14,15 +14,15 @@ async function handleMessage(request, sender, sendResponse) {
     if (!settings.apiKey) {
       sendResponse({
         success: false,
-        error: 'API Key 未配置。请在扩展设置中配置 API Key。'
+        error: 'API Key 未配置。请在扩展设置中配置智谱 AI API Key。'
       });
       return;
     }
     
     const apiKey = settings.apiKey;
-    const model = settings.model || 'gpt-4';
+    const model = settings.model || 'glm-4';
     
-    const client = new OpenAIBackgroundClient(apiKey, model);
+    const client = new ZhipuBackgroundClient(apiKey, model);
     
     let result;
     
@@ -63,12 +63,12 @@ async function handleMessage(request, sender, sendResponse) {
   }
 }
 
-// OpenAI 后台客户端
-class OpenAIBackgroundClient {
-  constructor(apiKey, model = 'gpt-4') {
+// 智谱 Zhipu AI 后台客户端
+class ZhipuBackgroundClient {
+  constructor(apiKey, model = 'glm-4') {
     this.apiKey = apiKey;
     this.model = model;
-    this.baseUrl = 'https://api.openai.com/v1';
+    this.baseUrl = 'https://open.bigmodel.cn/api/paas/v4';
   }
   
   async summarize(text, options = {}) {
@@ -160,7 +160,7 @@ ${text}
 
 // 安装清理监听器
 chrome.runtime.onInstalled.addListener(() => {
-  console.log('网页内容总结助手已安装');
+  console.log('网页内容总结助手已安装 - 使用智谱 Zhipu AI');
 });
 
 // 快捷键监听

@@ -4,7 +4,7 @@
 
 ## 功能特性
 
-- **智能总结**：使用 OpenAI API 对网页内容进行智能总结
+- **智能总结**：使用智谱 Zhipu AI 对网页内容进行智能总结
 - **多语言翻译**：支持中文、英文、日文、韩文等多种语言翻译
 - **要点提取**：自动提取网页核心要点
 - **关键信息高亮**：在页面上高亮显示关键信息
@@ -23,8 +23,8 @@
 1. **首次配置**：
    - 点击浏览器工具栏中的扩展图标
    - 在弹窗中点击"API 设置"
-   - 输入你的 OpenAI API Key
-   - 选择合适的模型（GPT-4 推荐）
+   - 输入你的智谱 AI API Key
+   - 选择合适的模型（GLM-4 推荐）
    - 点击"保存设置"
 
 2. **基本操作**：
@@ -60,7 +60,7 @@ browser_extension_cursor/
 │   ├── content.css       # 内容脚本样式
 │   └── options.css       # 设置页样式
 ├── utils/
-│   ├── openai.js         # OpenAI API 封装
+│   ├── openai.js         # 智谱 Zhipu AI API 封装
 │   └── contentExtractor.js  # 内容提取工具
 └── icons/                # 图标文件
 ```
@@ -69,12 +69,12 @@ browser_extension_cursor/
 
 - **Manifest V3**：最新的浏览器扩展标准
 - **原生 JavaScript**：无框架依赖，轻量快速
-- **OpenAI API**：提供强大的 AI 能力
+- **智谱 Zhipu AI**：提供强大的 AI 能力
 - **CSS3**：现代化样式设计
 
 ## 注意事项
 
-- 需要有效的 OpenAI API Key
+- 需要有效的智谱 API Key
 - 部分动态加载内容的页面可能无法正确提取
 - 高亮功能在单页应用中可能有兼容性问题
 - 请确保 API Key 的安全性，不要分享给他人
@@ -93,4 +93,4 @@ MIT License
 
 ---
 
-**Powered by OpenAI**
+**Powered by 智谱 AI**
